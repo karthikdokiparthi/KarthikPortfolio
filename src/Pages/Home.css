@@ -131,6 +131,18 @@
         gap: 20px;
     }
 
+    .home-details .home-intro {
+        margin-bottom: 10px;
+    }
+
+    .home-details .home-intro h1 {
+        margin-top: 10px;
+    }
+
+    .animated-title {
+        text-align: center;
+    }
+
     .home-details {
         margin-top: 20px;
     }
@@ -216,7 +228,6 @@
     }
 
     .cta-button {
-        margin-bottom: 10px;
         padding: 10px 20px;
         font-size: 0.8rem;
     }

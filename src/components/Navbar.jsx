@@ -15,7 +15,7 @@ function Navbar() {
         <nav className="navbar">
             <div className="navbar-container">
                 <div className="navbar-logo">
-                    <a href="/"><img src={logo} alt="Logo" className="logo" /></a>
+                    <a href="#homepage"><img src={logo} alt="Logo" className="logo" /></a>
                 </div>
 
                 <div className={`menu-toggle ${isMenuOpen ? 'active' : ''}`} onClick={toggleMenu}>
@@ -26,7 +26,7 @@ function Navbar() {
 
                 <ul className={`navbar-list ${isMenuOpen ? 'active' : ''}`}>
                     <li className="navbar-item">
-                        <a href="/" className="navbar-link">Home</a>
+                        <a href="#homepage" className="navbar-link">Home</a>
                     </li>
                     <li className="navbar-item">
                         <a href="#about" className="navbar-link">About</a>
