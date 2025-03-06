@@ -29,7 +29,7 @@ const Home = () => {
     }, [charIndex, titleIndex, titles]);
 
     return (
-        <div className="home">
+        <div className="home" id='homepage'>
             <div className="home-details">
                 <p className='home-intro'>Hello, I'm</p>
                 <h1>Karthik Dokiparthi</h1>
