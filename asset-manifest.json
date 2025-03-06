@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/KarthikPortfolio/static/css/main.e604fab8.css",
-    "main.js": "/KarthikPortfolio/static/js/main.09ac63bb.js",
+    "main.css": "/KarthikPortfolio/static/css/main.3c7fec2a.css",
+    "main.js": "/KarthikPortfolio/static/js/main.1d3d5303.js",
     "static/js/453.1407b060.chunk.js": "/KarthikPortfolio/static/js/453.1407b060.chunk.js",
     "static/media/image1.png": "/KarthikPortfolio/static/media/image1.96c78fcf53fc8e590f71.png",
     "static/media/image4.png": "/KarthikPortfolio/static/media/image4.bc128fd49a1f2ca5e1ca.png",
@@ -17,12 +17,12 @@
     "static/media/Image3.png": "/KarthikPortfolio/static/media/Image3.49e20f1c208268efc09f.png",
     "static/media/portfolioImage.jpg": "/KarthikPortfolio/static/media/portfolioImage.8c0550365d14cb2e2e37.jpg",
     "index.html": "/KarthikPortfolio/index.html",
-    "main.e604fab8.css.map": "/KarthikPortfolio/static/css/main.e604fab8.css.map",
-    "main.09ac63bb.js.map": "/KarthikPortfolio/static/js/main.09ac63bb.js.map",
+    "main.3c7fec2a.css.map": "/KarthikPortfolio/static/css/main.3c7fec2a.css.map",
+    "main.1d3d5303.js.map": "/KarthikPortfolio/static/js/main.1d3d5303.js.map",
     "453.1407b060.chunk.js.map": "/KarthikPortfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e604fab8.css",
-    "static/js/main.09ac63bb.js"
+    "static/css/main.3c7fec2a.css",
+    "static/js/main.1d3d5303.js"
   ]
 }
