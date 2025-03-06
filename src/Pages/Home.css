@@ -1,0 +1,211 @@
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 100vh;
+    padding: 50px 10%;
+    background: linear-gradient(90deg, #2E1437, #000000);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+    flex-wrap: wrap;
+}
+
+.home-details {
+    flex: 1;
+    max-width: 50%;
+    animation: fadeInLeft 1s ease-in-out;
+}
+
+.home-details .home-intro {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #feb47b;
+    margin-bottom: -40px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.home-details h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(145deg, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.home-details h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ddd;
+    margin-bottom: 15px;
+    animation: fadeIn 1.2s ease-in-out;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.home-details p {
+    font-size: 1.2rem;
+    color: #bbb;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    animation: fadeIn 1.4s ease-in-out;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    animation: fadeInUp 1.5s ease-in-out;
+    justify-content: center;
+}
+
+.cta-button {
+    background: linear-gradient(145deg, #ff7e5f, #feb47b);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 126, 95, 0.3);
+}
+
+.cta-button:hover {
+    background: linear-gradient(145deg, #feb47b, #ff7e5f);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(255, 126, 95, 0.5);
+}
+
+.home-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInRight 1s ease-in-out;
+    max-width: 100%;
+}
+
+.animated-title {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #ddd;
+    margin-bottom: 15px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+}
+
+.home-image img,
+.home-image video {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 5px solid #ff7e5f;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s ease;
+    object-fit: cover;
+}
+
+.home-image img:hover,
+.home-image video:hover {
+    transform: scale(1.05);
+    border-color: rgba(255, 126, 95, 0.5);
+    box-shadow: 0 8px 30px rgba(255, 126, 95, 0.6);
+}
+
+@media (max-width: 900px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 5%;
+        gap: 20px;
+    }
+
+    .home-details,
+    .home-image {
+        max-width: 100%;
+    }
+
+    .home-details h1 {
+        font-size: 3rem;
+    }
+
+    .home-details h2 {
+        font-size: 1.8rem;
+    }
+
+    .home-image img,
+    .home-image video {
+        width: 250px;
+        height: 250px;
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .home {
+        gap: 15px;
+    }
+
+    .home-details h1 {
+        font-size: 2.5rem;
+    }
+
+    .home-details h2 {
+        font-size: 1.5rem;
+    }
+
+    .home-details p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+
+    .home-image img,
+    .home-image video {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 400px) {
+    .home {
+        gap: 10px;
+    }
+
+    .home-details h1 {
+        font-size: 2rem;
+    }
+
+    .home-details h2 {
+        font-size: 1.3rem;
+    }
+
+    .home-details p {
+        font-size: 0.9rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
+        font-size: 0.8rem;
+    }
+
+    .home-image img,
+    .home-image video {
+        width: 180px;
+        height: 180px;
+    }
+}

@@ -1,0 +1,200 @@
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 10%;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    background: linear-gradient(90deg, #2E1437, #000000);
+}
+
+.about-details {
+    flex: 1;
+    padding: 20px;
+    animation: fadeInRight 1s ease-in-out;
+    max-width: 1000px;
+    text-align: center;
+}
+
+.about-details h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    margin: 40px auto 30px auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: block;
+    width: fit-content;
+}
+
+.about-details h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 70px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.about-details h1:hover::after {
+    width: 100%;
+}
+
+.about-details p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #ddd;
+    text-align: justify;
+    margin-bottom: 25px;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.contact-button {
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: white;
+    padding: 14px 35px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 126, 95, 0.3);
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.contact-button:hover {
+    background: linear-gradient(90deg, #feb47b, #ff7e5f);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 126, 95, 0.5);
+}
+
+a {
+    text-decoration: none;
+    color: #ddd;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive design for tablets, mobiles, and low-end devices */
+@media (max-width: 1024px) {
+    .about-container {
+        padding: 50px 8%;
+    }
+
+    .about-details h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-details p {
+        font-size: 1rem;
+    }
+
+    .contact-button {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        padding: 40px 5%;
+    }
+
+    .about-details h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-details h1::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .about-details p {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .contact-button {
+        padding: 12px 28px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-container {
+        padding: 30px 5%;
+    }
+
+    .about-details h1 {
+        font-size: 2rem;
+    }
+
+    .about-details p {
+        font-size: 0.9rem;
+    }
+
+    .contact-button {
+        padding: 10px 25px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .about-container {
+        padding: 25px 4%;
+    }
+
+    .about-details h1 {
+        font-size: 1.8rem;
+    }
+
+    .about-details p {
+        font-size: 0.85rem;
+    }
+
+    .contact-button {
+        padding: 8px 22px;
+        font-size: 0.8rem;
+    }
+}
