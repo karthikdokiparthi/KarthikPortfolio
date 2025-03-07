@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Home.css';
 import profileImage from '../assets/portfolioImage.jpg';
 import hoverVideo from '../assets/hoverVideo.mp4';
 
 const Home = () => {
-    const [isHovered, setIsHovered] = useState(false);
+    const [showVideo, setShowVideo] = useState(false);
     const titles = ['Frontend Developer', 'Backend Developer', 'Full Stack Java Developer'];
     const [displayText, setDisplayText] = useState('');
     const [titleIndex, setTitleIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
 
-    React.useEffect(() => {
+    useEffect(() => {
         const currentTitle = titles[titleIndex];
 
         if (charIndex < currentTitle.length) {
@@ -28,6 +28,14 @@ const Home = () => {
         }
     }, [charIndex, titleIndex, titles]);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setShowVideo((prev) => !prev);
+        }, 5000);
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <div className="home" id='homepage'>
             <div className="home-details">
@@ -43,12 +51,12 @@ const Home = () => {
                 </div>
             </div>
             <div className="home-image">
-                {isHovered ? (
+                {showVideo ? (
                     <video
                         autoPlay
                         loop
                         muted
-                        onMouseLeave={() => setIsHovered(false)}
+                        key="video"
                     >
                         <source src={hoverVideo} type="video/mp4" />
                         Your browser does not support the video tag.
@@ -57,7 +65,7 @@ const Home = () => {
                     <img
                         src={profileImage}
                         alt="Karthik Dokiparthi"
-                        onMouseEnter={() => setIsHovered(true)}
+                        key="image"
                     />
                 )}
             </div>
@@ -65,4 +73,4 @@ const Home = () => {
     );
 };
 
-export default Home;    
+export default Home;
