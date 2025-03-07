@@ -141,10 +141,17 @@
 
     .animated-title {
         text-align: center;
+        justify-content: center;
     }
 
     .home-details {
         margin-top: 20px;
+        order: 2;
+    }
+
+    .home-image {
+        order: 1;
+        margin-top: 60px;
     }
 
     .home-details,
@@ -180,6 +187,12 @@
 
     .home-details {
         margin-top: 10px;
+        order: 2;
+    }
+
+    .animated-title {
+        text-align: center;
+        justify-content: center;
     }
 
     .home-details h1 {
@@ -192,6 +205,11 @@
 
     .home-details p {
         font-size: 1rem;
+    }
+
+    .home-image {
+        order: 1;
+        margin-top: 60px;
     }
 
     .cta-button {
@@ -216,6 +234,12 @@
 
     .home-details {
         margin-top: 10px;
+        order: 2;
+    }
+
+    .animated-title {
+        text-align: center;
+        justify-content: center;
     }
 
     .home-details h1 {
@@ -228,6 +252,11 @@
 
     .home-details p {
         font-size: 0.9rem;
+    }
+
+    .home-image {
+        order: 1;
+        margin-top: 60px;
     }
 
     .cta-button {
