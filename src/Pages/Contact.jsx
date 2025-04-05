@@ -1,60 +1,107 @@
 import React from 'react';
+import { FiSend, FiUser, FiMail, FiMessageSquare } from 'react-icons/fi';
 import './Contact.css';
-import Button from '../Buttons/Button';
 
 const Contact = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
-        const form = event.target; // Get the form element
+        const form = event.target;
         const formData = new FormData(form);
         formData.append("access_key", "a94843b5-0379-4239-97a3-a5b08277ede3");
 
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Accept: "application/json"
+                },
+                body: JSON.stringify(Object.fromEntries(formData))
+            });
 
-        const res = await fetch("https://api.web3forms.com/submit", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json"
-            },
-            body: json
-        }).then((res) => res.json());
+            const data = await response.json();
 
-        if (res.success) {
-            form.reset();
-            alert("Form submitted successfully!");
-        } else {
-            alert("Form submission failed. Please try again.");
+            if (data.success) {
+                form.reset();
+                alert("Message sent successfully! I'll get back to you soon.");
+            } else {
+                alert("There was an error sending your message. Please try again.");
+            }
+        } catch (error) {
+            alert("Network error. Please check your connection and try again.");
         }
     };
 
     return (
-        <div className='contact-container'>
-            <div className="contact" id='contactpage'>
-                <div className="contact-top">
-                    <h1>Contact Me</h1>
+        <section id="contactpage" className="contact-section">
+            <div className="contact-container">
+                <div className="contact-header">
+                    <h2 className="section-title">
+                        <span className="title-decoration">//</span>
+                        Get In Touch
+                    </h2>
+                    <br />
+                    <p className="section-subtitle">
+                        Have a project in mind or want to connect? Drop me a message!
+                        <span className="underline"></span>
+                    </p>
                 </div>
-                <div className="contact-section">
-                    <form onSubmit={onSubmit} className="contact-bottom">
-                        <div className="form-group">
+
+                <div className="contact-card">
+                    <form onSubmit={onSubmit} className="contact-form">
+                        <div className="form-group floating">
+                            <FiUser className="input-icon" />
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder=" "
+                                required
+                            />
                             <label htmlFor="name">Your Name</label>
-                            <input type="text" id="name" placeholder="Enter your name" name="name" required />
+                            <div className="underline-animation"></div>
                         </div>
-                        <div className="form-group">
+
+                        <div className="form-group floating">
+                            <FiMail className="input-icon" />
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder=" "
+                                required
+                            />
                             <label htmlFor="email">Your Email</label>
-                            <input type="email" id="email" placeholder="Enter your email" name="email" required />
+                            <div className="underline-animation"></div>
                         </div>
-                        <div className="form-group">
-                            <label htmlFor="message">Write your message</label>
-                            <textarea id="message" name="message" rows="8" placeholder="Enter your message" required></textarea>
+
+                        <div className="form-group floating">
+                            <FiMessageSquare className="input-icon" />
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder=" "
+                                rows="5"
+                                required
+                            ></textarea>
+                            <label htmlFor="message">Your Message</label>
+                            <div className="underline-animation"></div>
                         </div>
-                        <Button type="submit" />
+
+                        <button type="submit" className="submit-button">
+                            <span>Send Message</span>
+                            <FiSend className="send-icon" />
+                        </button>
                     </form>
+
+                    <div className="contact-decoration">
+                        <div className="decoration-circle circle-1"></div>
+                        <div className="decoration-circle circle-2"></div>
+                        <div className="decoration-circle circle-3"></div>
+                    </div>
                 </div>
             </div>
-        </div>
-
+        </section>
     );
 };
 

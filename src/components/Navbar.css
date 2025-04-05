@@ -1,116 +1,211 @@
+:root {
+    --primary-dark: #1a0b2e;
+    --primary-light: #2e1a47;
+    --accent: #7b4dff;
+    --accent-hover: #9a7aff;
+    --text-light: #f0e6ff;
+    --text-gold: #FFD700;
+    --glass-effect: rgba(46, 20, 55, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+/* Base Navbar Styles */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(90deg, #2E1437, #000000);
+    background: var(--glass-effect);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-bottom: 1px solid var(--glass-border);
+    transition: all 0.4s ease;
 }
 
 .navbar-container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 60px;
+    height: 80px;
 }
 
+/* Logo Styles */
 .navbar-logo .logo {
     height: 50px;
     width: auto;
-    transition: filter 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .navbar-logo .logo:hover {
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 30px rgba(255, 255, 255, 0.4));
+    transform: scale(1.05);
+    filter:
+        drop-shadow(0 0 8px rgba(123, 77, 255, 0.6)) drop-shadow(0 0 15px rgba(123, 77, 255, 0.3));
 }
 
+/* Navigation Links */
 .navbar-list {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
     align-items: center;
-    gap: 20px;
-}
-
-.navbar-item {
-    display: inline-block;
+    gap: 30px;
 }
 
 .navbar-link {
-    color: #ecf0f1;
+    color: var(--text-light);
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 500;
-    transition: color 0.3s ease, transform 0.3s ease;
+    padding: 8px 12px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar-link::before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--accent);
+    transition: width 0.3s ease;
 }
 
 .navbar-link:hover {
-    color: #FFD700;
-    transform: translateY(-2px);
+    color: var(--text-gold);
 }
 
+.navbar-link:hover::before {
+    width: 100%;
+}
+
+/* Active Link State */
+.navbar-link.active {
+    color: var(--text-gold);
+    font-weight: 600;
+}
+
+.navbar-link.active::before {
+    width: 100%;
+    background-color: var(--text-gold);
+}
+
+/* Social Icons */
 .navbar-social {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .navbar-social a {
-    color: #ecf0f1;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
+    color: var(--text-light);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(123, 77, 255, 0.2);
 }
 
 .navbar-social a:hover {
-    color: #FFD700;
+    color: var(--text-light);
+    background: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(123, 77, 255, 0.4);
 }
 
+/* Mobile Menu Toggle */
 .menu-toggle {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    z-index: 1100;
+    padding: 10px;
 }
 
 .menu-toggle .bar {
-    width: 25px;
+    width: 28px;
     height: 3px;
-    background-color: #ecf0f1;
+    background-color: var(--text-light);
     margin: 4px 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-origin: center;
 }
 
-@media (max-width: 768px) {
+/* Mobile Menu Styles */
+@media (max-width: 992px) {
+    .navbar-container {
+        padding: 0 20px;
+        height: 70px;
+    }
+
     .navbar-list {
-        position: absolute;
-        top: 60px;
+        position: fixed;
+        top: 0;
         left: 0;
         width: 100%;
-        background: linear-gradient(90deg, #2E1437, #000000);
+        height: 100vh;
+        background: var(--primary-dark);
         flex-direction: column;
-        align-items: center;
-        gap: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease;
+        justify-content: center;
+        gap: 30px;
+        clip-path: circle(0px at 90% -10%);
+        -webkit-clip-path: circle(0px at 90% -10%);
+        transition: all 0.8s ease-out;
+        pointer-events: none;
     }
 
     .navbar-list.active {
-        max-height: 500px;
+        clip-path: circle(1500px at 90% -10%);
+        -webkit-clip-path: circle(1500px at 90% -10%);
+        pointer-events: all;
     }
 
     .navbar-item {
-        width: 100%;
-        text-align: center;
-        padding: 10px 0;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.4s ease;
+    }
+
+    .navbar-list.active .navbar-item {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.4s ease 0.2s;
+    }
+
+    .navbar-list.active .navbar-item:nth-child(2) {
+        transition-delay: 0.3s;
+    }
+
+    .navbar-list.active .navbar-item:nth-child(3) {
+        transition-delay: 0.4s;
+    }
+
+    .navbar-list.active .navbar-item:nth-child(4) {
+        transition-delay: 0.5s;
+    }
+
+    .navbar-list.active .navbar-item:nth-child(5) {
+        transition-delay: 0.6s;
+    }
+
+    .navbar-list.active .navbar-item:nth-child(6) {
+        transition-delay: 0.7s;
     }
 
     .navbar-link {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
+        padding: 10px 20px;
     }
 
     .navbar-social {
@@ -119,10 +214,13 @@
 
     .menu-toggle {
         display: flex;
+        position: relative;
+        order: -1;
     }
 
     .menu-toggle.active .bar:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
+        transform: rotate(45deg) translate(5px, 6px);
+        background-color: var(--text-gold);
     }
 
     .menu-toggle.active .bar:nth-child(2) {
@@ -130,6 +228,14 @@
     }
 
     .menu-toggle.active .bar:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
+        transform: rotate(-45deg) translate(5px, -6px);
+        background-color: var(--text-gold);
     }
+}
+
+/* Scroll Effect */
+.navbar.scrolled {
+    height: 70px;
+    background: rgba(26, 11, 46, 0.95);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }

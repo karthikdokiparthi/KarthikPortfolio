@@ -39,20 +39,29 @@ function Skills() {
 
     return (
         <section className="skills-section" id="skills" ref={skillsRef}>
-            <h2 className="skills-title">My Skills</h2>
-            <p>Here are my technical skills and proficiency levels in various technologies</p>
+            <div className="skills-header">
+                <h2 className="skills-title">Technical Expertise</h2>
+                <p className="skills-subtitle">Technologies I've mastered through projects and experience</p>
+            </div>
+
             <div className="skills-container">
                 {skillsData.map((skill, index) => (
                     <div className="skill-card" key={index}>
-                        <div><img src={skill.image} alt='skill realted image' /></div>
-                        <div className="skill-name">{skill.name}</div>
-                        <div className="skill-progress">
-                            <div
-                                className={`skill-progress-bar ${animate ? "animate" : ""}`}
-                                style={{ width: animate ? `${skill.percentage}%` : '0%' }}
-                            ></div>
+                        <div className="skill-icon-container">
+                            <img src={skill.image} alt={skill.name} className="skill-icon" />
                         </div>
-                        <div className="skill-percentage">{skill.percentage}%</div>
+                        <div className="skill-content">
+                            <h3 className="skill-name">{skill.name}</h3>
+                            <div className="skill-progress-container">
+                                <div className="skill-progress">
+                                    <div
+                                        className="skill-progress-bar"
+                                        style={{ width: animate ? `${skill.percentage}%` : '0%' }}
+                                    ></div>
+                                </div>
+                                <span className="skill-percentage">{skill.percentage}%</span>
+                            </div>
+                        </div>
                     </div>
                 ))}
             </div>
