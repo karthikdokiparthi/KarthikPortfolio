@@ -105,24 +105,15 @@
 }
 
 .navbar-social a {
-    color: var(--text-light);
     font-size: 1.3rem;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(123, 77, 255, 0.2);
+    width: 25px;
+    height: 25px;
 }
 
-.navbar-social a:hover {
-    color: var(--text-light);
-    background: var(--accent);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(123, 77, 255, 0.4);
-}
 
 /* Mobile Menu Toggle */
 .menu-toggle {
