@@ -25,7 +25,7 @@ function Footer() {
                             Quick Links
                         </h4>
                         <ul className="footer-nav">
-                            <li><a href="/"><FiHome /> Home</a></li>
+                            <li><a href="#homepage"><FiHome /> Home</a></li>
                             <li><a href="#about"><FiUser /> About</a></li>
                             <li><a href="#skills"><FiCode /> Skills</a></li>
                             <li><a href="#projects"><FiLayers /> Projects</a></li>

@@ -385,6 +385,7 @@
 }
 
 .certification-content {
+    margin-top: -20px;
     flex: 1;
 }
 
@@ -621,6 +622,51 @@
         hyphens: auto;
         /* Add hyphens if needed */
     }
+
+    .timeline-item {
+        flex-direction: row;
+        /* Change back to row layout */
+        align-items: flex-start;
+        /* Align items at the top */
+        margin-bottom: 1.25rem;
+        width: 100%;
+    }
+
+    .timeline-marker {
+        margin-right: 1rem;
+        /* Add some spacing */
+        flex-shrink: 0;
+        /* Prevent shrinking */
+    }
+
+    /* Education & Certification items */
+    .education-item,
+    .certification-item {
+        flex-direction: row;
+        /* Change back to row layout */
+        align-items: flex-start;
+        /* Align items at the top */
+        gap: 1rem;
+        padding-bottom: 1.25rem;
+        width: 100%;
+    }
+
+    .education-icon,
+    .certification-icon {
+        margin-top: 0.3rem;
+        /* Adjust icon position */
+        flex-shrink: 0;
+        /* Prevent shrinking */
+    }
+
+    /* Ensure content takes remaining space */
+    .timeline-content,
+    .education-content,
+    .certification-content {
+        flex: 1;
+        min-width: 0;
+        /* Prevent overflow */
+    }
 }
 
 /* Extra Small Mobile Styles (below 320px) */
@@ -663,5 +709,14 @@
         flex-direction: column;
         gap: 0.5rem;
         align-items: flex-start;
+    }
+
+    .timeline-marker {
+        margin-right: 0.75rem;
+    }
+
+    .education-item,
+    .certification-item {
+        gap: 0.75rem;
     }
 }
