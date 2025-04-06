@@ -72,23 +72,31 @@ const Home = () => {
                 </div>
             </div>
             <div className="home-image">
-                {showVideo ? (
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                        key="video"
-                    >
-                        <source src={hoverVideo} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                ) : (
-                    <img
-                        src={profileImage}
-                        alt="Karthik Dokiparthi"
-                        key="image"
-                    />
-                )}
+                <div className='image-container'>
+                    {showVideo ? (
+                        <video
+                            autoPlay
+                            loop
+                            muted
+                            key="video"
+                        >
+                            <source src={hoverVideo} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    ) : (
+                        <img
+                            src={profileImage}
+                            alt="Karthik Dokiparthi"
+                            key="image"
+                        />
+                    )}
+                </div>
+                <div className="tech-orbits">
+                    <div className="orbit react"></div>
+                    <div className="orbit java"></div>
+                    <div className="orbit spring"></div>
+                    <div className="orbit mysql"></div>
+                </div>
             </div>
         </div>
     );

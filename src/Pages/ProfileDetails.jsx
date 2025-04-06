@@ -9,7 +9,7 @@ const ProfileDetails = () => {
     const experiences = [
         {
             company: "Innomatics Research Lab",
-            duration: "Jan 2025 - Present",
+            duration: "Jan 2025 - Feb 2025",
             role: "Web Developer Intern",
             details: [
                 "Assisted in developing and maintaining company websites",
