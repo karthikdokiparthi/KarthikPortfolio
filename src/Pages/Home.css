@@ -82,7 +82,6 @@
 .name-outline {
     color: transparent;
     -webkit-text-stroke: 1px var(--text-light);
-    text-stroke: 1px var(--text-light);
 }
 
 .animated-title {
